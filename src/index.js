@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+
+
 import ComplaintForm from './components/ComplaintForm';
+import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<ComplaintForm />, document.getElementById('root'));
+import './index.css';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <ComplaintForm />
+  </Provider>,
+ document.getElementById('root'));
 registerServiceWorker();
