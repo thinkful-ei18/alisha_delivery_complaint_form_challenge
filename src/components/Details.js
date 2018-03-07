@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function Details() {
+export default class Details extends Component {
 
-  return (
-    <div>
-      <p>Give more details (optional)</p>
-      <textarea
-        label='Give more details (optional)'
-        element='details'
-        id='details'
-        type='textarea'
-      />
-    </div>
-  );
+  render() {
+
+    return (
+      <div>
+        <label htmlFor='details'>Give more details (optional)</label><br />
+        <textarea
+          {...this.props.input}
+          id='details'
+          type='textarea'
+        />
+      </div>
+    );
+  }
 }
