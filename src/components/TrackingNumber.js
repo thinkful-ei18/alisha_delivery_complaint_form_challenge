@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function TrackingNumber() {
+export default class TrackingNumber extends Component {
 
-  return(
-    <div>
-      <p>Tracking number:</p>
-      <input
-        label='trackingNumber'
-        element='trackingNumber'
-        id='trackingNumber'
-        type='text'
-      />
-    </div>
-  );
+  render() {
+    console.log('tracking number props: ', this.props);
+
+    return(
+      <div>
+        <label htmlFor='trackingNumber'>Tracking number:</label><br />
+        <input
+          {...this.props.input}
+          id='trackingNumber'
+          placeholder='Tracking Number'
+          type='text'
+        />
+      </div>
+    );
+  }
 }
