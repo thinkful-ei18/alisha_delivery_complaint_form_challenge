@@ -6,9 +6,10 @@ export default class SelectIssue extends Component {
 
     return (
       <div>
-        <label htmlFor='selectIssue'>What is your issue?</label><br />
+        <label htmlFor='issue'>What is your issue?</label><br />
         <select
-          id='selectIssue'
+          {...this.props.input}
+          id='issue'
           type='select' >
           <option value='one'>My delivery hasn't arrived</option>
           <option value='two'>The wrong item was delivered</option>

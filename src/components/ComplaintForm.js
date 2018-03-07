@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm, Field, SubmissionError } from 'redux-form';
 
 import TrackingNumber from './TrackingNumber';
 import SelectIssue from './SelectIssue';
@@ -10,10 +10,14 @@ import { required, nonEmpty, exactLength, numbersOnly } from './validators';
 
 class ComplaintForm extends Component {
 
+  onSubmit(values) {
+    console.log(values);
+  }
+
   render() {
 
     return(
-      <form>
+      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <fieldset>
             <legend>Report a problem with your delivery</legend>
 
@@ -25,7 +29,7 @@ class ComplaintForm extends Component {
 
             <Field
               component={SelectIssue}
-              name='selectIssue'
+              name='issue'
             />
 
             <Field
