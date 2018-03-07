@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
-import TrackingNumber from './TrackingNumber'
-import SelectIssue from './SelectIssue'
+import TrackingNumber from './TrackingNumber';
+import SelectIssue from './SelectIssue';
+import Details from './Details';
 
 
 class ComplaintForm extends Component {
@@ -23,16 +24,14 @@ class ComplaintForm extends Component {
               name='selectIssue'
             />
 
-            Give more details (optional)<br />
             <Field
-              component='Details'
-              label='Give more details (optional)'
+              component={Details}
               name='details'
-              id='Details'
-              type='textarea'
-            /><br /><br />
+            />
+            <br />
 
             <button type="submit">Submit</button>
+            
           </fieldset>
         </form>
     );
