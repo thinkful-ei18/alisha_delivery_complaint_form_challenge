@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
+import TrackingNumber from './TrackingNumber'
+
 class ComplaintForm extends Component {
 
   render() {
@@ -8,15 +10,11 @@ class ComplaintForm extends Component {
     return(
         <form>
           <fieldset>
-            <legend>Report a problem with your delivery</legend><br />
-            Tracking number:<br />
-            <Field
-              component='TrackingNumber'
-              label='Tracking number'
-              name='Tracking number'
-              id='trackingNumber'
-              type='text'
-            /><br /><br />
+            <legend>Report a problem with your delivery</legend>
+            <Field 
+              component={TrackingNumber}
+              name='trackingNumber' 
+            />
 
             What is your issue?<br />
             <Field
