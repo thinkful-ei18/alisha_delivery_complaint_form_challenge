@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
 import TrackingNumber from './TrackingNumber';
-// import SelectIssue from './SelectIssue';
-// import Details from './Details';
+import SelectIssue from './SelectIssue';
+import Details from './Details';
 import { required, nonEmpty, exactLength, numbersOnly } from './validators';
 
 
@@ -23,7 +23,7 @@ class ComplaintForm extends Component {
               validate={[ required, nonEmpty, exactLength, numbersOnly ]}
             />
 
-            {/* <Field
+            <Field
               component={SelectIssue}
               name='selectIssue'
             />
@@ -31,7 +31,7 @@ class ComplaintForm extends Component {
             <Field
               component={Details}
               name='details'
-            /> */}
+            />
             <br />
 
             <button type="submit">Submit</button>
