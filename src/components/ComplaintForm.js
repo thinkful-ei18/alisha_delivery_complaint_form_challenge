@@ -98,10 +98,18 @@ class ComplaintForm extends Component {
               component={Details}
               name='details'
             />
-            <br />
-          {successMessage}
-          {errorMessage}
-            <button type="submit">Submit</button>
+            
+
+            {successMessage}
+            {errorMessage}
+            
+
+            <button 
+              type="submit"
+            disabled={
+              this.props.pristine ||
+              this.props.submitting
+            }>Submit</button>
           
             
           </fieldset>
