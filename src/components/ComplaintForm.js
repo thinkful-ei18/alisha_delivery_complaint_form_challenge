@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { reduxForm, Field, SubmissionError } from 'redux-form';
+import { reduxForm, Field, SubmissionError, focus } from 'redux-form';
 
 import TrackingNumber from './TrackingNumber';
 import SelectIssue from './SelectIssue';
@@ -119,5 +119,7 @@ class ComplaintForm extends Component {
 }
 
 export default reduxForm({
-  form:'complaint'
+  form:'complaint',
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('complaint', Object.keys(errors)[0]))
 })(ComplaintForm)
