@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import '../styles/complaintForm.css';
+
+
 export default class TrackingNumber extends Component {
 
   render() {
@@ -10,7 +13,7 @@ export default class TrackingNumber extends Component {
     }
 
     return(
-      <div>
+      <div className='form trackingNumber'>
         <label htmlFor='trackingNumber'>Tracking number:{error}</label><br />
         <input
           {...this.props.input}

@@ -6,6 +6,7 @@ import SelectIssue from './SelectIssue';
 import Details from './Details';
 import { required, nonEmpty, exactLength, numbersOnly } from './validators';
 
+import '../styles/complaintForm.css';
 
 
 class ComplaintForm extends Component {
@@ -79,9 +80,9 @@ class ComplaintForm extends Component {
     }
 
     return(
-      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+      <form className='complaintForm' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <fieldset>
-            <legend>Report a problem with your delivery</legend>
+            <legend className='legend'>Report a problem with your delivery</legend>
 
             <Field 
               component={TrackingNumber}
@@ -98,19 +99,16 @@ class ComplaintForm extends Component {
               component={Details}
               name='details'
             />
-            
 
             {successMessage}
             {errorMessage}
-            
 
             <button 
+              className='submitButton'
               type="submit"
-            disabled={
-              this.props.pristine ||
-              this.props.submitting
-            }>Submit</button>
-          
+              disabled={this.props.pristine || this.props.submitting}>
+              Submit
+            </button>
             
           </fieldset>
         </form>
